@@ -80,8 +80,6 @@ def breadthfirstsearch(g, start, end):
                     adjacent[i].visited = True
     return False
 
-
-
 def createNewGraph():
     g = Graph()
     sizegraph = 6

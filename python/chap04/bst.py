@@ -31,7 +31,7 @@ class Tree:
           elif value < childRoot.value :
                self.InsertItem(value, childRoot.left)
           else: 
-               InsertItem( value, childRoot.right)
+               self.InsertItem( value, childRoot.right)
 
 def main():
      print("Hello!")
