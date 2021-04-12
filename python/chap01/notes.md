@@ -41,7 +41,7 @@
 
 **Random Probing** - Resolving a hash collision by generating pseudo-random hash values in successive applications of the rehash function.
 
-## Buckets and Chaning
+## Buckets and Chaining
 ### Another alternative for handling collisions is to allow multiple element keys to hash to the same location.
 
 **Bucket** - A collection of elements associated with a particular hash location.
@@ -60,4 +60,5 @@
 key % tableSize
 ```
 * Best if the table size is a prime number.
+
 **Folding** - A hash method that breaks the key into several pieces and concatenates or exclusive -OR's some of them to form the hash value.
