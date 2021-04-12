@@ -31,3 +31,12 @@
 
 **Clustering** - The tendency of elements to become unevenly distributed in the has table, with many elements clustering around a single hash location.
 
+**Rehashing** - Resolving a collision by computing a new hash location from a hash function that manipulates the original locatoin rather than the elements key.
+
+**Quadratic Probing** Resolving a hash collision by using the rehasing formula 
+'''
+(HashValue + I<sup>2</sup>) % arraySize
+'''
+, where I is the number of times that the rehash function has been applied.
+
+**Random Probing** - Resolving a hash collision by generating pseudo-random hash values in successive applications of the rehash function.
