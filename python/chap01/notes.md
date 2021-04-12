@@ -35,7 +35,7 @@
 
 **Quadratic Probing** Resolving a hash collision by using the rehasing formula 
 '''c++
-(HashValue + I<sup>2</sup>) % arraySize
+(HashValue + I*I) % arraySize
 '''
 , where I is the number of times that the rehash function has been applied.
 
