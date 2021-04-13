@@ -29,7 +29,7 @@ def URLify(str):
     return tempWord
 
 # Book version
-def URLify_CtCI(strring):
+def URLify_CtCI(string, length):
     
     new_index = len(string)
 
