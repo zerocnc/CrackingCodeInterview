@@ -29,7 +29,8 @@ def URLify(str):
     return tempWord
 
 # Book version
-def URLify_CtCI(str):
+def URLify_CtCI(strring):
+    
     new_index = len(string)
 
     for i in reversed(range(length)):
@@ -46,5 +47,3 @@ def URLify_CtCI(str):
 
 
 main()
-
-
