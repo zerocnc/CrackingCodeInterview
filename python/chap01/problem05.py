@@ -5,34 +5,37 @@
 import unittest
 
 def OneReplace(oldString, newString):
-    print("Testing oneAway")
+    print("Testing Replace")
+    flag = True
+
+    for i in range(0, len(oldString)):
+        if ( oldString[i] != newString[i] ):
+            print( oldString + ", " + newString + " -> " + "false")
+            return False
+
+    print( oldString + ", " + newString + " -> " + "true" )
+    return True
+
 
 def OneRemove(oldString, newString):
     print("Testing Remove")
 
 def OneInsert(oldString, newString):
-    print("Insert")
+    print("Testing Insert")
 
 # My Version Test for all
 def OneAway(originalString, newString):
-    print("One Away")
 
-    length = len(originalString) - len(newString)
-
-    if (length == 0):
-        OneReplace(originalString, newString)
-    elif (length == -1):
-        OneRemove(originalString, newString)
-    elif ( length == 1):
-        OneInsert(originalString, newString)
-    else :
-        print( originalString,newString, "-> false")
+    if ( len( originalString) == len(newString)):
+        if (OneReplace(originalString, newString)):
+            print("Is replace")
 
 class Test(unittest.TestCase):
-    dataReplace = [("pale", "bale")]
+    dataOriginal = ["pale"]
+    dataNew = ["bale"]
 
-    def test_Replace(self):
-        print("Replace Test")
+    def test_OneAway(self):
+        OneAway("pale", "bale")
 
 if __name__ == "__main__":
     unittest.main()
