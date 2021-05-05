@@ -4,9 +4,20 @@
 
 import unittest
 
+def OneEditAway(oldString, newString):
+
+    if len(oldString) == len(newString) + 1:
+        return OneInsert(oldString, newString)
+    elif len(oldString) == len(newString) - 1:
+        return OneRemove(oldString, newString)
+    elif len(oldString) == len(newString):
+        return OneReplace(oldString, newString)
+    else:
+        return False
+
+#   Name: OneReplace
+#   Purpose: Checks if one character was replaced.
 def OneReplace(oldString, newString):
-    print("Testing Replace")
-    flag = True
 
     for i in range(0, len(oldString)):
         if ( oldString[i] != newString[i] ):
@@ -18,10 +29,10 @@ def OneReplace(oldString, newString):
 
 
 def OneRemove(oldString, newString):
-    print("Testing Remove")
+    pass
 
 def OneInsert(oldString, newString):
-    print("Testing Insert")
+    pass
 
 # My Version Test for all
 def OneAway(originalString, newString):
@@ -31,11 +42,17 @@ def OneAway(originalString, newString):
             print("Is replace")
 
 class Test(unittest.TestCase):
-    dataOriginal = ["pale"]
-    dataNew = ["bale"]
 
-    def test_OneAway(self):
-        OneAway("pale", "bale")
+    def test_OneEditAway(self):
+        originalString = ["pale", "pales", "pale", "pale"]
+        newString = ["ple", "pale", "bale", "bake"]
+
+        answerKey = [True, True, True, False]
+
+        for ndx in range(4):
+            result = OneEditAway(originalString[ndx], newString[ndx])
+            self.assertEqual(result, answerKey[ndx])
+
 
 if __name__ == "__main__":
     unittest.main()
